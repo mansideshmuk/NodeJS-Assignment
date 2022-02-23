@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+<style>
+    table,
+    th,
+    td {
+        border: 2px solid steelblue;
+    }
+
+    th {
+        font-size: 30px;
+        background-color: lightblue;
+    }
+    td{
+        font-size: 18px;
+    }
+
+    a {
+        font-size: 30px;
+        color: red;
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Proffesion</th>
+        </tr>
+        <%users.forEach(user=>{%>
+            <tr>
+                <td>
+                    <%= user.name %>
+                </td>
+                <td>
+                    <%= user.email%>
+                </td>
+                <td>
+                    <%= user.age%>
+                </td>
+                <td>
+                    <%= user.city%>
+                </td>
+                <td>
+                    <%= user.proffesion%>
+                </td>
+
+            </tr>
+
+            <%})%>
+    </table>
+    <a href="/form">Add User</a>
+</body>
+
+</html>
