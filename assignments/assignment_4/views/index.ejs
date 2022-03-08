@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <title>User details</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 2px solid steelblue;
+    }
+
+    th {
+        font-size: 30px;
+        background-color: lightblue;
+    }
+
+    td {
+        font-size: 18px;
+    }
+
+    a {
+        font-size: 30px;
+        color: red;
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <%users.forEach(user=>{%>
+            <tr>
+                <td>
+                    <%= user.name %>
+                </td>
+                <td>
+                    <%= user.email%>
+                </td>
+                <% if (user.isPromoted==null){%>
+                    <div class="null-entry">
+                        <h3>
+                            <%=user.name%>
+                        </h3>
+                        <p>
+                            <%=user.email%>
+                        </p>
+                    </div>
+                    <% }else if(user.isPromoted==true){%>
+                        <div class="promoted-entry">
+                            <h3>
+                                <%=user.name%>
+                            </h3>
+                            <p>
+                                <%=user.email%>
+                            </p>
+                        </div>
+                        <%}%>
+                            <form method="POST" action="/users/<%= user._id %>?_method=PUT">
+                                <button id="edit-<%= user.name %>" type="submit">Promote/Demote</button>
+                            </form>
+                            <form method="POST" action="/users/<%= user._id %>?_method=DELETE">
+                                <button id="delete-<%= user.name %>">Delete</button>
+                            </form>
+            </tr>
+
+            <%})%>
+    </table>
+    <button class="button">
+        <a href="/form">Add user</a>
+    </button>
+</body>
+</html>
