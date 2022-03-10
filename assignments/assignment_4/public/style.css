@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(245, 239, 237);
+}
+.null-entry{
+    color:rgb(219,219,22);
+}
+.promoted-entry{
+   color:rgb(13,233,13); 
+}
+.demoted-entry{
+    color:rgb(241,10,10);
+}
+.button{
+    margin-top:25px;
+    padding:10px 15px;
+    font-size:20px;
+    text-align: center;
+    cursor:pointer;
+    color:rgb(223, 10, 10);
+    background-color:#d6d3df;
+    border-radius:30px;
+    box-shadow:0 5px #999;
+}
+.button:hover{background-color:steelblue}
+
+.button:active{
+    background-color:#a39516;
+    box-shadow: 0 8px #666;
+    transform:translate(0px 4px);
+}
+
+
