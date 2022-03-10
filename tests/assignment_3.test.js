@@ -13,9 +13,10 @@ describe('assignment_3', () => {
     });
 
     test('Check form', async () => {
+        console.log(__dirname);
         const response = await request(baseUrl)
             .get('/form');
-
+        
         ejs.renderFile(path.join(__dirname, '..', 'assignments', 'assignment_3', 'views', 'form.ejs'), {}, {}, function(err, str){
             expect(response.text).toEqual(str);
         });
